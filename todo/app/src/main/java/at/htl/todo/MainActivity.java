@@ -1,11 +1,8 @@
 package at.htl.todo;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.activity.ComponentActivity;
-
-import java.util.Arrays;
 
 import javax.inject.Inject;
 
@@ -32,8 +29,6 @@ public class MainActivity extends ComponentActivity {
         super.onCreate(savedInstanceState);
 
         todoService.getAll();
-
-        store.pipe.subscribe(m -> Log.i(TAG, Arrays.toString(m.todos)));
 
         mainView.buildContent(this);
     }
